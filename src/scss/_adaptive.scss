@@ -1,0 +1,387 @@
+@use 'global';
+$mainFont: global.$mainFont;
+$additionalFont: global.$additionalFont;
+$sectionTopMargin: 100px;
+$navMenuWidth: 320px;
+
+@media only screen and (max-width: 1300px){
+  .reviews-wrap{
+    width: 1300px;
+    position: relative;
+    left: calc((100% - 1300px)/2);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .lessons, .reviews, .about-company, .contacts{
+    margin: $sectionTopMargin 0 0 0;
+  }
+
+
+  .hamburger__span {
+    display:block;
+    background:#566973;
+    border-radius:2px;
+    transition: .25s ease-in-out;
+  }
+
+  #menu-toggle {
+    width:80px;
+    height:80px;
+    position: fixed;
+    z-index: 50;
+    top: 2px;
+    left: 0;
+    cursor:pointer;
+    background:rgba(136, 227, 220);
+    border-radius:5px;
+    &:hover {
+      background:rgba(136, 227, 220,.8);
+    }
+    #hamburger {
+      position:absolute;
+      height:100%;
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        width:50px;
+        height:4px;
+        margin:5px 0;
+        &:nth-child(1){
+          transition-delay:.5s;
+        }
+        &:nth-child(2){
+          transition-delay:.625s;
+        }
+        &:nth-child(3){
+          transition-delay:.75s;
+        }
+      }
+    }
+    #cross {
+      position:absolute;
+      height:100%;
+      width:100%;
+      transform:rotate(45deg);
+      span{
+        &:nth-child(1){
+          height:0;
+          width:4px;
+          position:absolute;
+          top:10%;
+          left:40px;
+          transition-delay:0s;
+        }
+        &:nth-child(2){
+          width:0;
+          height:4px;
+          position:absolute;
+          left:10%;
+          top:40px;
+          transition-delay:.25s;
+        }
+      }
+    }
+  }
+
+  #menu-toggle.open {
+    #hamburger {
+      span {
+        width:0;
+        &:nth-child(1){
+          transition-delay:0s;
+        }
+        &:nth-child(2){
+          transition-delay:.125s;
+        }
+        &:nth-child(3){
+          transition-delay:.25s;
+        }
+      }
+    }
+    #cross {
+      span {
+        &:nth-child(1){
+          height:80%;
+          transition-delay:.625s;
+        }
+      }
+      span {
+        &:nth-child(2){
+          width:80%;
+          transition-delay:.375s;
+        }
+      }
+    }
+  }
+
+.menu-burger-overlay{
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.65);
+}
+
+#menu-toggle.open + .menu-burger-overlay{
+  display: block;
+}
+
+  .navbar{
+    position: fixed;
+    z-index: 30;
+    height: 100vh;
+    background: rgb(136, 227, 220);
+    border-top: 2px solid #575760;
+    border-bottom: 2px solid #575760;
+    top: 0;
+    left: -$navMenuWidth;
+    transition: 0.3s;
+  }
+
+  #menu-toggle.open ~ .navbar{
+    left: 0;
+    transition: 0.5s;
+  }
+
+  .nav-menu{
+    width: $navMenuWidth;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    padding: 80px 30px 60px 50px;
+    box-sizing: border-box;
+
+    &__element{
+      margin: 12px 0;
+      max-width: 170px;
+    }
+
+    &__link{
+      color: #564f4f;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 30px;
+      -webkit-tap-highlight-color: transparent;
+
+    }
+  }
+
+  .introduction{
+    height: 450px;
+  }
+
+  .lessons-list{
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 70px 0 70px 0;
+
+    &__main{
+      width: 70%;
+      margin: 0 0 20px 0;
+    }
+
+    &__all{
+      width: 100%;
+
+      .lessons-list__elements:nth-child(odd),
+      .lessons-list__elements:nth-child(even)
+      {
+        margin: 10px;
+        width: calc(50% - 20px)
+      }
+    }
+  }
+
+  .lessons-elements_first{
+    height: 350px;
+  }
+
+  .reviews-wrap{
+    margin: 70px 0 50px 0;
+  }
+
+  .direction-element:nth-child(odd) .direction-element__text{
+    padding-right: 30px;
+  }
+
+  .direction-element:nth-child(even) .direction-element__text{
+    padding-left: 30px;
+  }
+
+  .price-wrap{
+    margin: 50px auto 0
+  }
+
+  .lessons-price__element{
+    max-width: 310px;
+  }
+
+  .contacts{
+    flex-direction: column;
+  }
+
+  .contacts__map{
+    max-width: none;
+    width: 100%;
+    margin: 5px 0 15px 0;
+  }
+
+  .contacts__address{
+    max-width: none;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .address__element, .address__element:first-child{
+    margin: 5px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  h1{
+    font-size: 50px;
+    line-height: 54px;
+  }
+
+  h2{
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .introduction{
+    height: 300px;
+
+      h1{
+        margin: 20px 0 0 0;
+      }
+  }
+
+  .lessons-elements__sign{
+    left: 20px;
+    line-height: 30px;
+    font-size: 20px;
+    max-width: 230px;
+  }
+
+  .lessons-list__all{
+    &__elements{
+      height: 200px;
+    }
+
+    .lessons-elements__sign {
+      font-size: 16px;
+    }
+  }
+
+  .reviews-wrap{
+    margin: 50px 0 40px 0;
+  }
+
+  .directions{
+    margin: 50px auto 0;
+  }
+
+  .direction-element{
+
+    flex-direction: column;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 0 50px 0;
+
+
+      &__text{
+        width: 100%;
+        order: 1;
+        margin: 0 0 30px 0;
+      }
+
+      &__image{
+        width: 100%;
+        max-height: none;
+        order: 2;
+
+            img{
+              max-height: 300px;
+            }
+      }
+  }
+
+  .direction-text__paragraph{
+    font-size: 16px;
+  }
+
+  .direction-element:nth-child(even) .direction-element__text{
+    padding-left: 0;
+  }
+
+  .direction-element:nth-child(odd) .direction-element__text{
+    padding-right: 0;
+  }
+
+  .price-wrap{
+    flex-direction: column;
+  }
+
+  .price-list, .price-image{
+    width: 85%;
+  }
+
+  .lessons-price{
+    max-width: none;
+    margin-left: -38px;
+
+      &__element{
+        max-width: none;
+      }
+  }
+
+  .contacts__address{
+    flex-direction: column;
+  }
+
+  .address__element, .address__element:first-child{
+    margin: 10px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .lessons, .reviews, .about-company, .contacts{
+    margin: 70px 0 0 0;
+  }
+
+  .review.review_active{
+    flex: 0 1 300px;
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+
+  .lessons-price__element:before{
+    display: none;
+  }
+
+  .header-title::before,
+  .header-title::after{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .modal__content{
+    margin: 0 12px;
+  }
+
+  .modal__content::before{
+    display: none;
+  }
+}

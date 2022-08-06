@@ -1,0 +1,159 @@
+@use 'global';
+$mainFont: global.$mainFont;
+$additionalFont: global.$additionalFont;
+
+.head-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 50px 0;
+}
+
+.icon{
+  width: 60px;
+  height: 60px;
+}
+
+.nav-menu{
+  list-style-type: none;
+  width: 655px;
+  justify-content: space-between;
+  display: flex;
+
+  &__link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 8px;
+    font-size: 14px;
+    line-height: 19px;
+    position: relative;
+
+    &:hover{
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+  }
+
+  &__link-active {
+    color: #6fe3c3;
+    position: relative;
+  }
+
+  &__link::before{
+    position: absolute;
+    content: '';
+    bottom: -50%;
+    left: 100%;
+    width: 100%;
+    height: 3px;
+    background: #6fe3c3;
+    opacity: 0;
+  }
+
+  &__link-active::before{
+    opacity: 1;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+  }
+
+}
+
+.modal{
+  font-family: $mainFont;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgb(41, 69, 84, 0.9);
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.7s;
+
+  &_active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.7s;
+    top: 0;
+  }
+
+  &__close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  &__close:hover path{
+    transition: 0.4s;
+    fill: #275c6e;
+  }
+
+  &__content{
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px 50px 30px;
+    max-width: 350px;
+    width: 100%;
+    background: linear-gradient(rgba(152, 201, 220, 0.7), rgba(122, 169, 188, 0.7));
+    border: 1px solid #7294a4;
+    box-shadow: rgb(152, 201, 220, 0.2) 5px 5px 5px;
+    border-radius: 5px;
+  }
+
+  &__content::before{
+    position: absolute;
+    background: url("../images/envelope.png") center center / contain no-repeat;
+    content: '';
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    z-index: -1;
+  }
+
+  &__form_record{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.form-record__element{
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  font-family: $mainFont;
+
+    &:focus{
+      border: 2px solid #2c54a4;
+    }
+
+    &:focus:invalid{
+      border: 2px solid #a41b11;
+    }
+
+   &[type=submit]{
+    background: #7aa1c9;
+    cursor: pointer;
+    transition: 0.2s;
+   }
+
+   &[type=submit]:hover{
+    background: #58b2e3;
+    transition: 0.3s;
+    }
+}

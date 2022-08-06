@@ -1,0 +1,140 @@
+@use 'global';
+$mainFont: global.$mainFont;
+$additionalFont: global.$additionalFont;
+
+.contacts{
+  margin: 150px 0 90px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__map{
+    max-width: 856px;
+    width: 100%;
+    margin-right: 20px;
+    flex: 0 2 auto;
+
+    .map-image{
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: 0.3s;
+    }
+
+    .map-image:hover{
+      opacity: 0.8;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+  }
+
+  &__address{
+    max-width: 392px;
+    width: 100%;
+    flex: 0 2 auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.address__element{
+  width: 100%;
+  height: 50%;
+  background: #018ABE;
+  border-radius: 10px;
+  padding: 35px 45px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &:first-child{
+      margin: 0 0 24px 0;
+    }
+}
+
+.address-block{
+
+  &__header{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    font-family: $additionalFont;
+    margin: 0 0 21px 0;
+  }
+
+  &__element{
+    margin: 0 0 21px 40px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__element.record{
+    margin-bottom: 30px;
+  }
+
+}
+
+.location{
+  position: relative;
+
+    &:before{
+      content: '';
+      position: absolute;
+      background: url("../images/location.png");
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: -40px;
+    }
+}
+
+.metro-name{
+  position: relative;
+
+  &:before{
+    content: '';
+    position: absolute;
+    background: url("../images/metro.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: -40px;
+  }
+}
+
+
+.calendar{
+  position: relative;
+
+  &:before{
+    content: '';
+    position: absolute;
+    background: url("../images/calendar.png");
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: -40px;
+  }
+}
+
+
+.copyright{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 30px 0;
+
+    &:first-child{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &:last-child{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 119px;
+    }
+}
