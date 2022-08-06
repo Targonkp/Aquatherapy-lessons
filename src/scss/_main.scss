@@ -175,7 +175,7 @@ $additionalFont: global.$additionalFont;
 .reviews-wrap{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 320px;
   margin: 100px 0 70px 0;
 }
 
@@ -192,7 +192,7 @@ $additionalFont: global.$additionalFont;
   border-radius: 10px;
   padding: 40px 45px;
   box-sizing: border-box;
-
+  transition: 0.7s;
 
   &__header{
     font-weight: 700;
@@ -204,14 +204,14 @@ $additionalFont: global.$additionalFont;
 
   &_active{
     margin: 0 50px;
-    flex: 0 1 636px;
+    flex: 0 2 636px;
     height: auto;
     width: 100%;
     padding: 50px 60px;
     box-sizing: border-box;
     font-size: 14px;
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.5s;
     position: relative;
     overflow: hidden;
 

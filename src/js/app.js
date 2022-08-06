@@ -14,11 +14,21 @@ buttonRecords.forEach(
     )
 )
 
-//закрываю модальное окно записи
+//закрываю модальное окно записи по клику на close
 modalCloseEl.addEventListener(
     'click',
     () => {
         modalEl.classList.remove('modal_active')
+    }
+)
+
+//закрываю модальное окно записи по клику вне формы
+document.addEventListener(
+    'click',
+    (event) => {
+        if (event.target.classList.contains('modal_active')){
+            modalEl.classList.remove('modal_active')
+        }
     }
 )
 
