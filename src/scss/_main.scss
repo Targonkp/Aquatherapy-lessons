@@ -310,7 +310,7 @@ $additionalFont: global.$additionalFont;
   }
 
   &__image:hover{
-    opacity: 0.8;
+    filter: saturate(180%);
     transition: 0.5s;
   }
 }

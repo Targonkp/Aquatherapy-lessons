@@ -37,10 +37,10 @@ $navMenuWidth: 320px;
     top: 2px;
     left: 0;
     cursor:pointer;
-    background:rgba(136, 227, 220);
+    background:#34bff5;
     border-radius:5px;
     &:hover {
-      background:rgba(136, 227, 220,.8);
+      background: rgb(52, 191, 245, 0.8);
     }
     #hamburger {
       position:absolute;
@@ -142,7 +142,7 @@ $navMenuWidth: 320px;
     position: fixed;
     z-index: 30;
     height: 100vh;
-    background: rgb(136, 227, 220);
+    background: #34bff5;
     border-top: 2px solid #575760;
     border-bottom: 2px solid #575760;
     top: 0;
