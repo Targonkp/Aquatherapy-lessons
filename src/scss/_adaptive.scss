@@ -17,6 +17,10 @@ $navMenuWidth: 320px;
     margin: $sectionTopMargin 0 0 0;
   }
 
+  .icon{
+    margin-left: 60px;
+  }
+
 
   .hamburger__span {
     display:block;
@@ -26,8 +30,8 @@ $navMenuWidth: 320px;
   }
 
   #menu-toggle {
-    width:80px;
-    height:80px;
+    width:60px;
+    height:60px;
     position: fixed;
     z-index: 50;
     top: 2px;
@@ -48,7 +52,7 @@ $navMenuWidth: 320px;
       align-items: center;
 
       span {
-        width:50px;
+        width:45px;
         height:4px;
         margin:5px 0;
         &:nth-child(1){
@@ -72,16 +76,16 @@ $navMenuWidth: 320px;
           height:0;
           width:4px;
           position:absolute;
-          top:10%;
-          left:40px;
+          top:12%;
+          left:30px;
           transition-delay:0s;
         }
         &:nth-child(2){
           width:0;
           height:4px;
           position:absolute;
-          left:10%;
-          top:40px;
+          left:12%;
+          top:30px;
           transition-delay:.25s;
         }
       }
@@ -156,7 +160,7 @@ $navMenuWidth: 320px;
     flex-direction: column;
     top: 0;
     left: 0;
-    padding: 80px 30px 60px 50px;
+    padding: 60px 30px 60px 50px;
     box-sizing: border-box;
 
     &__element{
@@ -259,12 +263,21 @@ $navMenuWidth: 320px;
     line-height: 50px;
   }
 
+  .icon{
+    visibility: hidden;
+  }
+
   .introduction{
     height: 300px;
 
       h1{
         margin: 20px 0 0 0;
       }
+  }
+
+  .lessons-list__elements:nth-child(odd),
+  .lessons-list__elements:nth-child(even){
+    height: 200px;
   }
 
   .lessons-elements__sign{
@@ -280,7 +293,7 @@ $navMenuWidth: 320px;
     }
 
     .lessons-elements__sign {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
