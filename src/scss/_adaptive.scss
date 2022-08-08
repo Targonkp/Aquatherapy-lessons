@@ -16,7 +16,7 @@ $navMenuWidth: 320px;
 
   .hamburger__span {
     display:block;
-    background:#566973;
+    background: #ffffff;
     border-radius:2px;
     transition: .25s ease-in-out;
   }
@@ -29,10 +29,10 @@ $navMenuWidth: 320px;
     top: 2px;
     left: 0;
     cursor:pointer;
-    background:#34bff5;
+    background:#018ABE;
     border-radius:5px;
     &:hover {
-      background: rgb(52, 191, 245, 0.8);
+      background: rgb(1, 138, 190, 0.8);
     }
     #hamburger {
       position:absolute;
@@ -134,7 +134,7 @@ $navMenuWidth: 320px;
     position: fixed;
     z-index: 30;
     height: 100vh;
-    background: #34bff5;
+    background: #018ABE;
     border-top: 2px solid #575760;
     border-bottom: 2px solid #575760;
     top: 0;
@@ -161,7 +161,7 @@ $navMenuWidth: 320px;
     }
 
     &__link{
-      color: #564f4f;
+      color: #ffffff;
       font-weight: 600;
       font-size: 28px;
       line-height: 30px;
@@ -270,8 +270,9 @@ $navMenuWidth: 320px;
 
   .lessons-elements__sign{
     left: 20px;
-    line-height: 30px;
-    font-size: 20px;
+    right: 10px;
+    line-height: 20px;
+    font-size: 14px;
     max-width: 230px;
   }
 
@@ -279,10 +280,10 @@ $navMenuWidth: 320px;
     &__elements{
       height: 200px;
     }
+  }
 
-    .lessons-elements__sign {
-      font-size: 14px;
-    }
+  .reviews-container{
+    margin: 0 auto 50px;
   }
 
   .reviews-wrap{
