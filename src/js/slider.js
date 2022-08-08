@@ -2,38 +2,40 @@
 let sliderElements = document.querySelectorAll('.review');
 //получаю родителя для точек слайдера
 let dotsWrap = document.querySelector('.slider-dots');
-//получаю родителя слайдов
+//получаю обертку слайдов
 let sliderWrap = document.querySelector('.reviews-wrap');
 //задаю начальный индекс для элементов слайдера
-let indexEl = 0;
+let indexEl = Math.floor(sliderElements.length/2);
+//значение единицы margin-left
+let movingEl;
 
-//функция для элементов слайдера
-function sliderElementsDisplay(array) {
-    //задаю всем элементам слайдера display none
-    array.forEach(
-        item => item.style.display = 'none'
-    )
-    //нахожу элемент с классом active - задаю ему и его соседям display block
-    sliderWrap.querySelector('.review_active').style.display = 'block';
-    if (sliderWrap.querySelector('.review_active').nextElementSibling){
-        sliderWrap.querySelector('.review_active').nextElementSibling.style.display = 'block';
+//функция, отвечающая за размер movingEl для margin-left, в зависимости от размера экрана
+function sliderMoving(){
+    if (document.documentElement.clientWidth > 768){
+        movingEl = 540;
+        console.log(movingEl)
+        sliderChange(sliderElements, indexEl);
     }
-    //если нет следующего соседа, то добавляю дополнительный margin
-    else{
-        array[array.length-1].style.marginRight = 'auto';
+    if (document.documentElement.clientWidth <= 768 && document.documentElement.clientWidth > 480)
+    {
+        movingEl = 420;
+        console.log(movingEl)
+        sliderChange(sliderElements, indexEl);
     }
-    if (sliderWrap.querySelector('.review_active').previousElementSibling){
-        sliderWrap.querySelector('.review_active').previousElementSibling.style.display = 'block';
+    if (document.documentElement.clientWidth <= 480 ){
+        movingEl = 300;
+        console.log(movingEl)
+        sliderChange(sliderElements, indexEl);
     }
-    //если нет предыдущего соседа, то добавляю дополнительный margin
-    else{
-        array[0].style.marginLeft = 'auto';
-    }
-    //нахожу индекс элемента с классом active и перезаписываю indexEl
-    indexEl = Array.from(sliderElements).findIndex(index => index.classList.contains('review_active'));
 }
 
-sliderElementsDisplay(sliderElements);
+sliderMoving();
+
+window.addEventListener(
+    'resize',
+    sliderMoving
+)
+
 
 //функция для создания точек слайдера
 function createDots(array, index) {
@@ -41,7 +43,7 @@ function createDots(array, index) {
     if (array.length > 0){
         for (let i = 0; i< array.length; i++){
             let dotEl = document.createElement('span');
-            dotEl.className = 'slider-dots__element'
+            dotEl.className = 'slider-dots__element';
             dotsWrap.appendChild(dotEl);
         }
         document.querySelectorAll('.slider-dots__element')[index].classList.add('slider-dots__element_active');
@@ -57,7 +59,11 @@ function sliderChange(array, index){
         item => item.classList.remove('review_active')
     );
     array[index].classList.add('review_active');
-    sliderElementsDisplay(sliderElements);
+    //получаю значение margin, на которое необходимо перемещать слайдер
+    let changeMargin = (index - 1) * movingEl;
+    //задаю обертке отрицательный margin, чтобы двигать слайдер
+    sliderWrap.style.marginLeft = -changeMargin + 'px';
+    console.log(changeMargin);
 }
 
 //навешиваю обработчик на общего родителя точек
@@ -78,3 +84,5 @@ dotsWrap.addEventListener(
         sliderChange(sliderElements, indexEl);
     }
 )
+
+

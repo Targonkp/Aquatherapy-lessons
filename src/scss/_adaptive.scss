@@ -4,14 +4,6 @@ $additionalFont: global.$additionalFont;
 $sectionTopMargin: 100px;
 $navMenuWidth: 320px;
 
-@media only screen and (max-width: 1300px){
-  .reviews-wrap{
-    width: 1300px;
-    position: relative;
-    left: calc((100% - 1300px)/2);
-  }
-}
-
 @media only screen and (max-width: 1024px) {
   .lessons, .reviews, .about-company, .contacts{
     margin: $sectionTopMargin 0 0 0;
@@ -209,10 +201,6 @@ $navMenuWidth: 320px;
     height: 350px;
   }
 
-  .reviews-wrap{
-    margin: 70px 0 50px 0;
-  }
-
   .direction-element:nth-child(odd) .direction-element__text{
     padding-right: 30px;
   }
@@ -299,6 +287,16 @@ $navMenuWidth: 320px;
 
   .reviews-wrap{
     margin: 50px 0 40px 0;
+    width: 1280px;
+    left: calc((100% - 1280px)/2);
+  }
+
+  .review{
+    flex: 0 0 380px;
+
+    &_active{
+      flex: 0 0 420px;
+    }
   }
 
   .directions{
@@ -373,8 +371,26 @@ $navMenuWidth: 320px;
     margin: 70px 0 0 0;
   }
 
+  .modal__content{
+    margin: 0 12px;
+  }
+
+  .modal__content::before{
+    display: none;
+  }
+
+  .reviews-wrap{
+    width: 930px;
+    left: calc((100% - 930px) / 2);
+  }
+
+  .review{
+    flex: 0 0 280px;
+    margin: 0 10px;
+  }
+
   .review.review_active{
-    flex: 0 1 300px;
+    flex: 0 0 300px;
     padding: 30px 20px;
     margin: 0 15px;
   }
@@ -385,16 +401,6 @@ $navMenuWidth: 320px;
 
   .header-title::before,
   .header-title::after{
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 480px){
-  .modal__content{
-    margin: 0 12px;
-  }
-
-  .modal__content::before{
     display: none;
   }
 }

@@ -159,28 +159,45 @@ $additionalFont: global.$additionalFont;
   }
 }
 
+
 .reviews{
   text-align: center;
   margin: 150px 0 0 0;
-}
-
-.reviews-container{
-  overflow: hidden;
 }
 
 .wrap-slider{
   max-width: 1736px;
 }
 
+.reviews-container{
+  width: 100%;
+  height: auto;
+  margin: 100px auto 70px;
+  overflow: hidden;
+}
+
 .reviews-wrap{
+  width: 1736px;
+  min-height: 340px;
+  position: relative;
+  left: calc((100% - 1736px)/2);
+  transition: 2s;
+
+}
+
+.reviews-list{
   display: flex;
   flex-direction: row;
-  height: 320px;
-  margin: 100px 0 70px 0;
+  max-height: 400px;
+  height: 100%;
+  align-items: center;
 }
 
 .review{
-  flex: 0 1.5 500px;
+  margin: 0 20px;
+  flex: 0 0 500px;
+  max-height: 400px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -192,7 +209,6 @@ $additionalFont: global.$additionalFont;
   border-radius: 10px;
   padding: 40px 45px;
   box-sizing: border-box;
-  transition: 0.7s;
 
   &__header{
     font-weight: 700;
@@ -203,17 +219,18 @@ $additionalFont: global.$additionalFont;
   }
 
   &_active{
-    margin: 0 50px;
-    flex: 0 2 636px;
-    height: auto;
-    width: 100%;
+    margin: 0 10px;
+    flex: 0 0 636px;
+    min-height: 320px;
+    max-height: 420px;
+    height: 100%;
     padding: 50px 60px;
     box-sizing: border-box;
     font-size: 14px;
     opacity: 1;
-    transition: 0.5s;
     position: relative;
     overflow: hidden;
+    transition: 0.5s;
 
         &__header{
         font-weight: 700;
