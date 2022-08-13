@@ -237,6 +237,22 @@ $navMenuWidth: 320px;
     margin: 5px;
   }
 
+  main{
+    position: inherit;
+
+    &::before{
+
+    }
+
+    &::after{
+
+    }
+
+    .animate-loading{
+      width: 300px;
+    }
+  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -365,6 +381,12 @@ $navMenuWidth: 320px;
   .address__element, .address__element:first-child{
     margin: 10px 0;
   }
+
+  main {
+    .animate-loading {
+      width: 250px;
+    }
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -403,5 +425,11 @@ $navMenuWidth: 320px;
   .header-title::before,
   .header-title::after{
     display: none;
+  }
+
+  main {
+    .animate-loading {
+      width: 150px;
+    }
   }
 }
