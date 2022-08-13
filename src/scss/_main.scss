@@ -6,8 +6,9 @@ $additionalFont: global.$additionalFont;
   width: 100%;
   height: 600px;
   border-radius: 10px;
-  background: url("../images/introduction.jpg") center center;
+  background: url("../images/introduction.jpg") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,10 +30,6 @@ $additionalFont: global.$additionalFont;
     opacity: 0;
   }
 
-  &:hover{
-    overflow: visible;
-  }
-
   &:hover::after{
     top: 0;
     left: 0;
@@ -52,6 +49,10 @@ $additionalFont: global.$additionalFont;
   h1{
     margin: 40px 0 0 0;
   }
+}
+
+body.modal_active{
+  overflow: hidden;
 }
 
 .header-title{
@@ -181,8 +182,7 @@ $additionalFont: global.$additionalFont;
   min-height: 340px;
   position: relative;
   left: calc((100% - 1736px)/2);
-  transition: 2s;
-
+  transition: 1.2s;
 }
 
 .reviews-list{
@@ -437,3 +437,69 @@ $additionalFont: global.$additionalFont;
   }
 }
 
+
+main{
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 10%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background: rgb(32, 64, 164, 0.7);
+      z-index: 100;
+      visibility: hidden;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 10%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      background: rgb(59, 114, 98, 0.7);
+      z-index: 100;
+      visibility: hidden;
+      opacity: 0;
+      transition: 1s;
+    }
+
+  .animate-loading{
+    display: none;
+  }
+}
+
+
+main.animation-transition{
+    position: relative;
+    height: 100vh;
+
+    &::before{
+      width: 50%;
+      visibility: visible;
+      opacity: 1;
+      transition: 0.7s;
+    }
+
+   &::after{
+      width: 50%;
+     visibility: visible;
+     opacity: 1;
+     transition: 0.5s;
+    }
+
+  .animate-loading{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    opacity: 0.7;
+  }
+}

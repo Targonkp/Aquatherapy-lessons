@@ -37,7 +37,37 @@ module.exports = {
         template: "./src/index.html",
         inject: 'body',
         minify: false
-    })
+    }),
+        new HtmlWebpackPlugin({
+        filename: 'news.html',
+        template: "./src/news.html",
+        minify: false
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'myblog.html',
+        template: "./src/myblog.html",
+        minify: false
+    }),
+     new HtmlWebpackPlugin({
+         filename: 'lessons.html',
+         template: "./src/lessons.html",
+         minify: false
+     }),
+     new HtmlWebpackPlugin({
+         filename: 'contacts.html',
+         template: "./src/contacts.html",
+         minify: false
+     }),
+     new HtmlWebpackPlugin({
+         filename: 'reviews.html',
+         template: "./src/reviews.html",
+         minify: false
+     }),
+     new HtmlWebpackPlugin({
+         filename: 'about.html',
+         template: "./src/about.html",
+         minify: false
+     })
     ],
     module:{
         rules: [

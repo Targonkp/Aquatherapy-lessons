@@ -4,6 +4,7 @@ let modalEl = document.querySelector('.modal');
 let modalCloseEl = document.querySelector('.modal__close');
 let burgerMenu = document.getElementById('menu-toggle');
 
+
 //вызываю модальное окно записи
 buttonRecords.forEach(
     item => item.addEventListener(
@@ -37,5 +38,23 @@ burgerMenu.addEventListener(
     'click',
     () => {
         burgerMenu.classList.toggle('open')
+    }
+)
+
+
+//записываю текущий title
+let currentTitle = document.querySelector('title').textContent;
+
+//отвечает за изменение title
+document.addEventListener(
+    'visibilitychange',
+    function () {
+        //если браузер свернули или осуществлен переход на другую вкладку
+        if (document.hidden){
+            document.querySelector('title').textContent = 'Вы отошли';
+        }
+        else{
+            document.querySelector('title').textContent = currentTitle;
+        }
     }
 )

@@ -1,3 +1,6 @@
+//если есть обертка слайдера, то применяю функцию
+if (document.querySelector('.reviews-wrap') !== null){
+
 //получаю количество слайдеров
 let sliderElements = document.querySelectorAll('.review');
 //получаю родителя для точек слайдера
@@ -112,5 +115,4 @@ setTimeout(
         )
     }, 5000
 )
-
-
+}
