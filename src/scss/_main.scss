@@ -147,6 +147,11 @@ body.modal_active{
     line-height: 34px;
     font-size: 24px;
     text-align: left;
+    color: #ffffff;
+  }
+
+  &__link{
+    text-decoration: none;
   }
 }
 
@@ -501,5 +506,32 @@ main.animation-transition{
 
   .animate-loading{
     display: block;
+  }
+}
+
+
+.section-wrap{
+  margin: 100px auto 120px;
+  text-align: center;
+  position: relative;
+
+  &::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 255, 255, 0.5);
+    top: -30px;
+    left: 0;
+  }
+
+  &::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 255, 255, 0.5);
   }
 }

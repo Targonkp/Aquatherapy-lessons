@@ -67,7 +67,15 @@ module.exports = {
          filename: 'about.html',
          template: "./src/about.html",
          minify: false
-     })
+     }),
+     new HtmlWebpackPlugin(
+         {
+             filename: 'test.html',
+             template: "./src/test.html",
+             minify: false
+         }
+     )
+
     ],
     module:{
         rules: [

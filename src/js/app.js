@@ -11,6 +11,7 @@ buttonRecords.forEach(
         'click',
         () => {
             modalEl.classList.add('modal_active')
+            document.body.style.overflow = 'hidden';
         }
     )
 )
@@ -19,7 +20,8 @@ buttonRecords.forEach(
 modalCloseEl.addEventListener(
     'click',
     () => {
-        modalEl.classList.remove('modal_active')
+        modalEl.classList.remove('modal_active');
+        document.body.style.overflow = 'visible';
     }
 )
 
@@ -29,6 +31,7 @@ document.addEventListener(
     (event) => {
         if (event.target.classList.contains('modal_active')){
             modalEl.classList.remove('modal_active')
+            document.body.style.overflow = 'visible'
         }
     }
 )
@@ -37,7 +40,13 @@ document.addEventListener(
 burgerMenu.addEventListener(
     'click',
     () => {
-        burgerMenu.classList.toggle('open')
+        burgerMenu.classList.toggle('open');
+        if (document.body.style.overflow === 'hidden'){
+            document.body.style.overflow = 'visible'
+        }
+        else {
+            document.body.style.overflow = 'hidden'
+        }
     }
 )
 
@@ -58,3 +67,25 @@ document.addEventListener(
         }
     }
 )
+
+
+// let bodyTest;
+// let testFunc = () => {
+//     fetch("test.html")
+//         .then(response => {return response.text()})
+//         .then(data => {
+//             console.log(data);
+//             bodyTest = data;
+//         })
+// }
+//
+// testFunc();
+//
+// setTimeout(
+//     () => {
+//         console.log(bodyTest)
+//         let newEl = document.createElement("div");
+//         newEl.innerHTML = bodyTest;
+//         document.body.appendChild(newEl);
+//     }, 3000
+// )

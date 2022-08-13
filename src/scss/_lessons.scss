@@ -1,0 +1,13 @@
+.lessons-list.lessons-list-modified{
+  height: auto;
+
+  .lessons-list__elements{
+    margin: 10px 10px;
+    width: calc(50% - 20px);
+    height: 300px;
+  }
+
+  .lessons-list__all{
+    width: 100%;
+  }
+}
