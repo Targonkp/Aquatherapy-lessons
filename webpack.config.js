@@ -41,37 +41,44 @@ module.exports = {
         new HtmlWebpackPlugin({
         filename: 'news.html',
         template: "./src/news.html",
+        inject: 'body',
         minify: false
     }),
     new HtmlWebpackPlugin({
         filename: 'myblog.html',
         template: "./src/myblog.html",
+        inject: 'body',
         minify: false
     }),
      new HtmlWebpackPlugin({
          filename: 'lessons.html',
          template: "./src/lessons.html",
+         inject: 'body',
          minify: false
      }),
      new HtmlWebpackPlugin({
          filename: 'contacts.html',
          template: "./src/contacts.html",
+         inject: 'body',
          minify: false
      }),
      new HtmlWebpackPlugin({
          filename: 'reviews.html',
          template: "./src/reviews.html",
+         inject: 'body',
          minify: false
      }),
      new HtmlWebpackPlugin({
          filename: 'about.html',
          template: "./src/about.html",
+         inject: 'body',
          minify: false
      }),
      new HtmlWebpackPlugin(
          {
              filename: 'test.html',
              template: "./src/test.html",
+             inject: 'false',
              minify: false
          }
      )

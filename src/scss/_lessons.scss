@@ -11,3 +11,28 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 1024px){
+  .lessons-list.lessons-list-modified{
+    .lessons-list__elements{
+      width: 100%;
+      height: 350px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .lessons-list.lessons-list-modified{
+    .lessons-list__elements{
+      height: 270px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .lessons-list.lessons-list-modified{
+    .lessons-list__elements{
+      height: 200px;
+    }
+  }
+}

@@ -14,8 +14,7 @@ $additionalFont: global.$additionalFont;
 .news{
     &__element{
       width: calc((100% - 72px)/3);
-      max-height: 258px;
-      height: 100%;
+      height: 258px;
       margin: 12px 12px;
     }
 
@@ -23,12 +22,16 @@ $additionalFont: global.$additionalFont;
     display: inline-block;
     text-decoration: none;
     position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   &__image{
     width: 100%;
     height: 100%;
     transition: 0.3s;
+    object-fit: cover;
+    border-radius: 10px;
 
     &:hover{
       filter: saturate(180%);
@@ -67,8 +70,6 @@ $additionalFont: global.$additionalFont;
   .news {
     &__element {
       width: calc((100% - 72px) / 2);
-      max-height: 258px;
-      height: 100%;
       margin: 12px 12px;
     }
   }
