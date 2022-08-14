@@ -1,14 +1,28 @@
 .lessons-list.lessons-list-modified{
   height: auto;
 
+  .lessons-list__all{
+    width: 100%;
+  }
+
   .lessons-list__elements{
     margin: 10px 10px;
     width: calc(50% - 20px);
     height: 300px;
   }
 
-  .lessons-list__all{
-    width: 100%;
+  .lessons-elements__sign{
+    padding: 5px 10px;
+    background: #1c424b;
+    border-radius: 5px;
+  }
+
+  .lessons-elements__image{
+    transition: 0.3s;
+      &:hover{
+        border-radius: 22px;
+        transition: 0.4s;
+      }
   }
 }
 

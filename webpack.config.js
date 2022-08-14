@@ -78,7 +78,7 @@ module.exports = {
          {
              filename: 'test.html',
              template: "./src/test.html",
-             inject: 'false',
+             inject: 'body',
              minify: false
          }
      )
