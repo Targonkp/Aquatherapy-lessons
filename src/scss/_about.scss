@@ -1,0 +1,15 @@
+.about-container{
+  border: 2px solid #018ABE;
+  border-radius: 20px;
+  padding: 30px 40px;
+  margin: 60px 0;
+  box-sizing: border-box;
+}
+
+.about-text{
+    &__paragraph{
+      font-size: 18px;
+      line-height: 28px;
+      text-align: left;
+    }
+}

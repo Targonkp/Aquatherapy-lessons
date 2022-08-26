@@ -27,6 +27,9 @@ module.exports = {
             paths: ['src/**/*.*']
         },
     },
+    optimization: {
+        minimize: false,
+    },
     plugins: [
         new MiniCssExtractPlugin(
             {
